@@ -55,12 +55,20 @@ class VariableNotificationService: Service() {
             PendingIntent.FLAG_IMMUTABLE
         )
 
-        updateNotification(startTimerPendingIntent, stopTimerPendingIntent, closeTimerPendingIntent)
+        updateNotification(
+            startTimerPendingIntent,
+            stopTimerPendingIntent,
+            closeTimerPendingIntent
+        )
 
         return START_NOT_STICKY
     }
 
-    private fun updateNotification(startTimerPendingIntent: PendingIntent, stopTimerPendingIntent: PendingIntent, closeTimerPendingIntent: PendingIntent){
+    private fun updateNotification(
+        startTimerPendingIntent: PendingIntent,
+        stopTimerPendingIntent: PendingIntent,
+        closeTimerPendingIntent: PendingIntent
+    ){
         val timer = Timer()
         timer.scheduleAtFixedRate(object : TimerTask(){
             override fun run() {
@@ -88,7 +96,11 @@ class VariableNotificationService: Service() {
         },0, 1000)
     }
 
-    private fun notification(title: String, operateTimerPendingIntent: PendingIntent, closeTimerPendingIntent: PendingIntent) : Notification {
+    private fun notification(
+        title: String,
+        operateTimerPendingIntent: PendingIntent,
+        closeTimerPendingIntent: PendingIntent
+    ) : Notification {
         val contentText = "Variable Notification"
         val channel = NotificationChannel(
             CHANNEL_ID, CHANNEL_NAME,
@@ -117,7 +129,10 @@ class VariableNotificationService: Service() {
 }
 
 fun startNotifyForegroundService(context: Context) {
-    ContextCompat.startForegroundService(context, Intent(context, VariableNotificationService::class.java))
+    ContextCompat.startForegroundService(
+        context,
+        Intent(context, VariableNotificationService::class.java)
+    )
 }
 
 fun stopNotifyForegroundService(context: Context) {

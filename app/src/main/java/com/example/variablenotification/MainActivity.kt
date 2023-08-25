@@ -88,7 +88,12 @@ class MainActivity : ComponentActivity() {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun InputField(seconds: MutableState<String>, timerOperator: TimerOperator, context: Context, modifier: Modifier = Modifier) {
+fun InputField(
+    seconds: MutableState<String>,
+    timerOperator: TimerOperator,
+    context: Context,
+    modifier: Modifier = Modifier
+) {
     Column(
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally,
