@@ -47,3 +47,31 @@ targetSdkVersion: 33
 
 ## 注意すること
 ForegroundServiceを伴う通知のため、アプリを終了しても通知は表示され続けます。そのため、通知を閉じたい場合はアプリもしくは通知のボタンを押すことで通知を閉じるようにします。
+
+## 使用ライブラリ
+#### Hilt  
+build.gradle.kts(Project)
+```
+plugins {
+    id("com.google.dagger.hilt.android") version "2.44" apply false
+}
+```
+build.gradle.kts(Module)
+```
+plugins {
+    kotlin("kapt")
+    id("com.google.dagger.hilt.android")
+}
+
+dependencies {
+    implementation("com.google.dagger:hilt-android:2.44")
+    kapt("com.google.dagger:hilt-android-compiler:2.44")
+}
+```
+
+## 使用権限
+ForegroundServiceと通知の送信
+```xml
+<uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+<uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+```
