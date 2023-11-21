@@ -1,11 +1,11 @@
 # android-compose-variable-notification(最小限の実装)
 1秒ごとに更新する通知の実装
 ## 想定環境
-使用言語: Kotlin
-Android Studio Giraffe | 2022.3.1
-OS: Windows 11
-minSdkVersion: 26
-targetSdkVersion: 33
+使用言語: Kotlin  
+Android Studio Giraffe | 2022.3.1  
+OS: Windows 11  
+minSdkVersion: 26  
+targetSdkVersion: 33  
 
 ## Zennの記事
 このコードを[Zennの記事](https://zenn.dev/kei_no_suke/articles/5fe5829c306a10)で紹介しています。
