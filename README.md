@@ -12,7 +12,7 @@ targetSdkVersion: 33
 ## アプリのメイン画面
 <img src="img/app_main.png" width=500vw>
 
-## 実行手順
+## 利用手順
 
 <img src="img/app_desc_1.png" width=500vw>
 
